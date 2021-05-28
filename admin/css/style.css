@@ -1,0 +1,187 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.menu {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #000;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu ul li {
+  display: inline;
+  margin: 5px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #ff6b81;
+}
+
+.menu ul li a:hover {
+  color: #ff2335;
+}
+
+.main-content {
+  width: 100%;
+  background-color: #f1f2f6;
+  padding: 3% 0%;
+}
+
+.main-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col-4 {
+  width: 19%;
+  background-color: #fff;
+  float: left;
+  padding: 20px;
+  margin: 1%;
+}
+
+.footer {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff4757;
+}
+
+/* ======== All Button Design ========== */
+.btn {
+  border: 0;
+}
+.btn-primary {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #1e90ff;
+  color: #fff;
+  padding: 6px;
+}
+.btn-info {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #7bed9f;
+  color: #fff;
+  padding: 6px;
+}
+.btn-danger {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #ff6b81;
+  color: #fff;
+  padding: 6px;
+}
+.btn-success {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  padding: 6px;
+  background-color: #4cd137;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #3742fa;
+  color: #fff;
+}
+.btn-info:hover {
+  background-color: #2ed573;
+  color: #fff;
+}
+.btn-danger:hover {
+  background-color: #ff4757;
+  color: #fff;
+}
+.btn-success:hover {
+  background-color: #44bd32;
+  color: #fff;
+}
+
+/* ========= Alert Message color ========= */
+.success {
+  color: #44bd32;
+}
+.error {
+  color: #e84118;
+}
+.warning {
+  color: #ffa502;
+}
+
+/* ========= Form Design ========= */
+form .form-group {
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+form label {
+  width: 80%;
+  display: block;
+  margin-bottom: 2px;
+}
+.form-control {
+  width: 80%;
+  padding: 10px;
+  border: none;
+}
+
+/* ========= Table Design ========= */
+.table thead {
+  width: 100%;
+  display: block;
+  background-color: #2f3542;
+  color: #fff;
+  padding: 6px;
+  border: 0;
+}
+td {
+  padding: 0px 30px;
+}
+.table tbody {
+  width: 100%;
+  display: block;
+  padding: 6px;
+
+  border: 0;
+}
+
+/* ====== Admin Login Page Design ===== */
+.admin-login {
+  border: 1px solid #000;
+  width: 25%;
+  margin: 10% auto;
+  padding: 20px;
+  background-color: #a4b0be;
+  color: #fff;
+}
+.text-left {
+  margin-left: -78px;
+}
+.d-block {
+  display: block;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.w-86 {
+  width: 86%;
+}
