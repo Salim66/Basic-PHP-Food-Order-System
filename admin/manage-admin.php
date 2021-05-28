@@ -48,6 +48,7 @@
                         <td><?php echo $data['full_name']; ?></td>
                         <td><?php echo $data['username']; ?></td>
                         <td>
+                            <a class="btn btn-success" href="<?php echo SITEURL; ?>admin/change-password-admin.php?id=<?php echo $data['id']; ?>">Change Password</a>
                             <a class="btn btn-info" href="<?php echo SITEURL; ?>admin/edit-admin.php?id=<?php echo $data['id']; ?>">Edit Admin</a>
                             <a class="btn btn-danger" href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $data['id']; ?>">Delete Admin</a>
                         </td>

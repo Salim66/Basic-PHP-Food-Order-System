@@ -53,6 +53,7 @@ if (isset($_GET['id'])) {
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <div class="form-group">
                 <label for="">Full Name</label>
+                <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
                 <input type="text" name="full_name" class="form-control" value="<?php echo $data['full_name'] ?>">
             </div>
             <div class="form-group">
@@ -74,22 +75,23 @@ if (isset($_GET['id'])) {
 // Check whether the submit button press or not 
 if (isset($_POST['submit'])) {
     // Get all values from form
+    $id = $_POST['id'];
     $full_name = $_POST['full_name'];
     $username  = $_POST['username'];
 
     // Check whether the all values enter or not
-    if ($full_name != "" && $username != "" && $password != "") {
+    if ($full_name != "" && $username != "") {
         // Process next step
-        // Create SQL query for inset admin data into database
-        $sql = "INSERT INTO tbl_admin (full_name, username, password) VALUES('$full_name', '$username', '$password')";
+        // Create SQL query for update admin data into database
+        $sql = "UPDATE tbl_admin SET full_name='$full_name', username='$username' WHERE id=$id";
         // Execute the query
         $res = $connection->query($sql);
 
-        // Check whether the values insert or not into database
+        // Check whether the values updated or not into database
         if ($res == true) {
             // Success
             // Set message into session 
-            $_SESSION['success'] = '<div class="success">Admin added successfully ): </div>';
+            $_SESSION['success'] = '<div class="success">Admin updated successfully ): </div>';
             // Redirect to page
             header("location:" . SITEURL . 'admin/manage-admin.php');
             // Stop the process
@@ -97,9 +99,9 @@ if (isset($_POST['submit'])) {
         } else {
             // Failed
             // Set message into session 
-            $_SESSION['error'] = '<div class="error">Failed to added data! </div>';
+            $_SESSION['error'] = '<div class="error">Failed to updated data! </div>';
             // Redirect to page
-            header("location:" . SITEURL . 'admin/add-admin.php');
+            header("location:" . SITEURL . 'admin/edit-admin.php');
             // Stop the process
             die();
         }
@@ -107,7 +109,7 @@ if (isset($_POST['submit'])) {
         // Stop the process
         $_SESSION['error'] = '<div class="error">Please filled all the fill!</div>';
         // Redirect to page
-        header("location:" . SITEURL . 'admin/add-admin.php');
+        header("location:" . SITEURL . 'admin/edit-admin.php');
         // Stop the process
         die();
     }

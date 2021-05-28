@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
     // Get all values from form
     $full_name = $_POST['full_name'];
     $username  = $_POST['username'];
-    $password  = $_POST['password'];
+    $password  = md5($_POST['password']);
 
     // Check whether the all values enter or not
     if ($full_name != "" && $username != "" && $password != "") {
