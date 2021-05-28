@@ -185,3 +185,7 @@ td {
 .w-86 {
   width: 86%;
 }
+
+table .thead td {
+  border-bottom: 2px solid #000;
+}
