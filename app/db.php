@@ -1,5 +1,6 @@
 <?php
-
+// session start
+session_start();
 
 // create constant for server information]
 define("SITEURL", 'http://localhost/basic-php-food-order/');

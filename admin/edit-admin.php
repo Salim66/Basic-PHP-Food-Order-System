@@ -1,8 +1,39 @@
 <?php require_once('layout/menu.php') ?>
+
+<?php
+// Check whether the url value set or not
+if (isset($_GET['id'])) {
+    // Get the url value
+    $id = $_GET['id'];
+
+    // Create SQL query for select single admin data
+    $sql = "SELECT * FROM tbl_admin WHERE id=$id";
+    // Execute the query
+    $res = $connection->query($sql);
+
+    // Count the query data
+    $count = mysqli_num_rows($res);
+
+    // Check whether the $count variable data has or not
+    if ($count > 0) {
+        // Data Available
+        $data = $res->fetch_assoc();
+    } else {
+        // Data not available
+        // Message set into session
+        $_SESSION['error'] = '<div class="error">Data not available!</div>';
+        // Redirect to page
+        header("location:" . SITEURL . 'admin/manage-admin.php');
+        // Stop the process
+    }
+}
+
+
+?>
 <!-- Main Content Section Starts -->
 <div class="main-content">
     <div class="wrapper">
-        <h1>Add Admin</h1><br>
+        <h1>Edit Admin</h1><br>
         <?php
         // Check whether the session value has or not
         if (isset($_SESSION['success'])) {
@@ -22,18 +53,14 @@
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <div class="form-group">
                 <label for="">Full Name</label>
-                <input type="text" name="full_name" class="form-control">
+                <input type="text" name="full_name" class="form-control" value="<?php echo $data['full_name'] ?>">
             </div>
             <div class="form-group">
                 <label for="">Username</label>
-                <input type="text" name="username" class="form-control">
+                <input type="text" name="username" class="form-control" value="<?php echo $data['username'] ?>">
             </div>
             <div class="form-group">
-                <label for="">Password</label>
-                <input type="password" name="password" class="form-control">
-            </div>
-            <div class="form-group">
-                <input type="submit" name="submit" class="btn btn-primary" value="Add new">
+                <input type="submit" name="submit" class="btn btn-primary" value="Update">
             </div>
         </form>
     </div>
@@ -49,7 +76,6 @@ if (isset($_POST['submit'])) {
     // Get all values from form
     $full_name = $_POST['full_name'];
     $username  = $_POST['username'];
-    $password  = $_POST['password'];
 
     // Check whether the all values enter or not
     if ($full_name != "" && $username != "" && $password != "") {

@@ -1,7 +1,5 @@
 <?php
 require_once('../app/db.php');
-// SESSION START
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
