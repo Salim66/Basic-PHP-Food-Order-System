@@ -27,15 +27,43 @@
                 <td>Username</td>
                 <td>Active</td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Salim Hasan</td>
-                <td>salim66</td>
-                <td>
-                    <a class="btn btn-info" href="">Edit Admin</a>
-                    <a class="btn btn-danger" href="">Delete Admin</a>
-                </td>
-            </tr>
+            <?php
+            // Create SQL query for select all data from databaes tbl_admin tabla
+            $sql = "SELECT * FROM tbl_admin";
+            // Execute the query
+            $res = $connection->query($sql);
+
+            // Count the query
+            $count = mysqli_num_rows($res);
+
+            // Check whether the value has or not
+            if ($count > 0) {
+                // Data available
+                // Fecth all data 
+                $i = 1;
+                while ($data = $res->fetch_assoc()) {
+            ?>
+                    <tr>
+                        <td><?php echo $i++; ?></td>
+                        <td><?php echo $data['full_name']; ?></td>
+                        <td><?php echo $data['username']; ?></td>
+                        <td>
+                            <a class="btn btn-info" href="">Edit Admin</a>
+                            <a class="btn btn-danger" href="">Delete Admin</a>
+                        </td>
+                    </tr>
+                <?php
+                }
+            } else {
+                ?>
+                <tr>
+                    <td colspan="4" class="error">Data not found!</td>
+                </tr>
+            <?php
+            }
+
+            ?>
+
         </table>
     </div>
 </div>
