@@ -4,7 +4,22 @@
     <div class="wrapper">
         <h1>Manage Admin</h1>
         <br>
+        <?php
+        // Check whether the session value has or not
+        if (isset($_SESSION['success'])) {
+            echo $_SESSION['success'];
+            unset($_SESSION['success']);
+        }
+
+        // Check whether the session value has or not
+        if (isset($_SESSION['error'])) {
+            echo $_SESSION['error'];
+            unset($_SESSION['error']);
+        }
+        ?>
         <br>
+        <a class="btn btn-primary" href="<?php echo SITEURL; ?>admin/add-admin.php">Add Admin</a>
+        <br><br>
         <table>
             <tr class="thead">
                 <td>#</td>

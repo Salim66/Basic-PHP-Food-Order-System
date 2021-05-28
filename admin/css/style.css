@@ -188,4 +188,6 @@ td {
 
 table .thead td {
   border-bottom: 2px solid #000;
+  font-size: 16px;
+  font-weight: bolder;
 }
