@@ -1,7 +1,8 @@
 <?php
 
 
-// create constant for server information
+// create constant for server information]
+define("SITEURL", 'http://localhost/basic-php-food-order/');
 define('HOST', 'localhost');
 define('USERNAME', 'root');
 define('PASSWRD', '');
