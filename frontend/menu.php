@@ -1,3 +1,8 @@
+<?php
+// Server connection
+require_once('app/db.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
