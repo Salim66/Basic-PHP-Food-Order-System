@@ -85,7 +85,7 @@
                             ?>
                         </td>
                         <td>
-                            <a class="btn btn-info" href="<?php echo SITEURL; ?>admin/edit-admin.php?id=<?php echo $data['id']; ?>">Edit Cateogry</a>
+                            <a class="btn btn-info" href="<?php echo SITEURL; ?>admin/edit-category.php?id=<?php echo $data['id']; ?>">Edit Cateogry</a>
                             <a class="btn btn-danger" href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $data['id']; ?>&image_name=<?php echo $data['image_name'] ?>">Delete Category</a>
                         </td>
                     </tr>

@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
         if ($remove == false) {
             // Failed to image remove
             // Set message into session
-            $_SESSION['error'] = '<div class="error">Failed to image upload!</div>';
+            $_SESSION['error'] = '<div class="error">Failed to image remove!</div>';
             // Redirect to page
             header("location:" . SITEURL . 'admin/manage-category.php');
             // Stop to process
