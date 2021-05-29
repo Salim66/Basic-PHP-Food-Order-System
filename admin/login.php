@@ -72,11 +72,11 @@ if (isset($_POST['submit'])) {
         //5. Succefully to login dashboard
         $_SESSION['success'] = '<div class="success">You are successfully login ): </div>';
         // initailize the username into sission value
-        $_SESSION['user'] = $username;
+        $_SESSION['username'] = $username;
         //6. Redirect to admin dashboard
         header("location:" . SITEURL . 'admin/index.php');
     } else {
-        //5. Succefully to login dashboard
+        //5. Failed to login dashboard
         $_SESSION['error'] = '<div class="error">Username and password did not match! </div>';
         //6. Redirect to admin dashboard
         header("location:" . SITEURL . 'admin/login.php');

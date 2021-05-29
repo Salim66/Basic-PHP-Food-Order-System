@@ -1,5 +1,13 @@
 <?php require_once('layout/menu.php') ?>
 <!-- Main Content Section Starts -->
+<?php
+// Check whether the session variable set or not
+if (isset($_SESSION['success'])) {
+    echo $_SESSION['success'];
+    unset($_SESSION['success']);
+}
+
+?>
 <div class="main-content">
     <div class="wrapper">
         <h1>DASHBOARD</h1>

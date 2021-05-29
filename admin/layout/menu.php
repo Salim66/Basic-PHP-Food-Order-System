@@ -1,5 +1,6 @@
 <?php
 require_once('../app/db.php');
+require_once('login-check.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
