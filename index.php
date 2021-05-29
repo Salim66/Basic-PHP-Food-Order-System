@@ -4,7 +4,7 @@
 <section class="food-search text-center">
     <div class="container">
 
-        <form action="food-search.html" method="POST">
+        <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
             <input type="search" name="search" placeholder="Search for Food.." required>
             <input type="submit" name="submit" value="Search" class="btn btn-primary">
         </form>
@@ -31,7 +31,7 @@
             // Fetch all data
             while ($data = $res->fetch_assoc()) {
         ?>
-                <a href="<?php echo SITEURL; ?>category-foods.php?id=<?php echo $data['id']; ?>">
+                <a href="<?php echo SITEURL; ?>category-foods.php?id=<?php echo $data['id']; ?>&title=<?php echo $data['title']; ?>">
                     <div class="box-3 float-container">
                         <?php
                         // Check whether the image is has or not

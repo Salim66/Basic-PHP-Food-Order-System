@@ -1,10 +1,18 @@
 <?php require_once('frontend/menu.php') ?>
+<?php
+// Check whether the id has or not
+if (isset($_GET['id']) && isset($_GET['title'])) {
+    // Get value from form
+    $id    = $_GET['id'];
+    $title = $_GET['title'];
+}
 
+?>
 <!-- fOOD sEARCH Section Starts Here -->
 <section class="food-search text-center">
     <div class="container">
 
-        <h2>Foods on Your Search <a href="#" class="text-white">"Momo"</a></h2>
+        <h2>Foods on Your Search <a href="#" class="text-white">"<?php echo $title; ?>"</a></h2>
 
     </div>
 </section>
@@ -20,11 +28,7 @@
 
         <?php
 
-        // Check whether the id has or not
-        if (isset($_GET['id'])) {
-            // Get value from form
-            $id = $_GET['id'];
-        }
+
 
         //1. Create SQL query all data select food table in databse 
         $sql = "SELECT * FROM tbl_food WHERE category_id=$id";

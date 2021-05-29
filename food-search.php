@@ -3,8 +3,14 @@
 <!-- fOOD sEARCH Section Starts Here -->
 <section class="food-search text-center">
     <div class="container">
+        <?php
+        // Check whether the submit button press or not
+        if (isset($_POST['submit'])) {
+            $search = $_POST['search'];
+        }
 
-        <h2>Foods on Your Search <a href="#" class="text-white">"Momo"</a></h2>
+        ?>
+        <h2>Foods on Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
 
     </div>
 </section>
@@ -21,13 +27,13 @@
         <?php
 
         // Check whether the id has or not
-        if (isset($_GET['id'])) {
+        if (isset($_POST['submit'])) {
             // Get value from form
-            $id = $_GET['id'];
+            $search = $_POST['search'];
         }
 
         //1. Create SQL query all data select food table in databse 
-        $sql = "SELECT * FROM tbl_food WHERE id=$id";
+        $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
         //2. Execute the query
         $res = $connection->query($sql);
 
