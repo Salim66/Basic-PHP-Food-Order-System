@@ -12,7 +12,18 @@
     </div>
 </section>
 <!-- fOOD sEARCH Section Ends Here -->
+<?php
+// Check whether the session value has or not
+if (isset($_SESSION['success'])) {
+    echo $_SESSION['success'];
+    unset($_SESSION['success']);
+}
+if (isset($_SESSION['error'])) {
+    echo $_SESSION['error'];
+    unset($_SESSION['error']);
+}
 
+?>
 <!-- CAtegories Section Starts Here -->
 <section class="categories">
     <div class="container">
