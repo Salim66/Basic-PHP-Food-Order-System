@@ -31,7 +31,7 @@
             // Fetch all data
             while ($data = $res->fetch_assoc()) {
         ?>
-                <a href="category-foods.html">
+                <a href="<?php echo SITEURL; ?>category-foods.php?id=<?php echo $data['id']; ?>">
                     <div class="box-3 float-container">
                         <?php
                         // Check whether the image is has or not
