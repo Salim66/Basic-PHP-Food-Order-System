@@ -17,6 +17,8 @@
             unset($_SESSION['error']);
         }
         ?>
+        <a class="btn btn-primary" href="<?php echo SITEURL; ?>admin/add-category.php">Add Category</a>
+        <br>
         <br>
         <table>
             <tr class="thead">
@@ -25,7 +27,7 @@
                 <td>Image</td>
                 <td>Featured</td>
                 <td>Active</td>
-                <td>Active</td>
+                <td>Action</td>
             </tr>
             <?php
             // Create SQL query for select all data from databaes tbl_admin tabla
@@ -70,8 +72,21 @@
                             ?>
                         </td>
                         <td>
-                            <a class="btn btn-info" href="<?php echo SITEURL; ?>admin/edit-admin.php?id=<?php echo $data['id']; ?>">Edit Admin</a>
-                            <a class="btn btn-danger" href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $data['id']; ?>">Delete Admin</a>
+                            <?php
+                            if ($data['active'] == 'Yes') {
+                            ?>
+                                <div class="success">Yes</div>
+                            <?php
+                            } else if ($data['active'] == 'No') {
+                            ?>
+                                <div class="error">No</div>
+                            <?php
+                            }
+                            ?>
+                        </td>
+                        <td>
+                            <a class="btn btn-info" href="<?php echo SITEURL; ?>admin/edit-admin.php?id=<?php echo $data['id']; ?>">Edit Cateogry</a>
+                            <a class="btn btn-danger" href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $data['id']; ?>&image_name=<?php echo $data['image_name'] ?>">Delete Category</a>
                         </td>
                     </tr>
                 <?php
@@ -79,7 +94,7 @@
             } else {
                 ?>
                 <tr>
-                    <td colspan="4" class="error">Data not found!</td>
+                    <td colspan="4" class="error text-center">Data not found!</td>
                 </tr>
             <?php
             }
