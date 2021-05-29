@@ -35,7 +35,7 @@
             </tr>
             <?php
             // Create SQL query for select all data from databaes tbl_admin tabla
-            $sql = "SELECT * FROM tbl_order ORDER BY id";
+            $sql = "SELECT * FROM tbl_order ORDER By id DESC";
             // Execute the query
             $res = $connection->query($sql);
 
@@ -62,7 +62,7 @@
                         <td><?php echo $data['customer_email']; ?></td>
                         <td><?php echo $data['customer_address']; ?></td>
                         <td>
-                            <a class="btn btn-info" href="<?php echo SITEURL; ?>admin/edit-food.php?id=<?php echo $data['id']; ?>">Edit Food</a>
+                            <a class="btn btn-info" href="<?php echo SITEURL; ?>admin/edit-order.php?id=<?php echo $data['id']; ?>">Edit Order</a>
                         </td>
                     </tr>
                 <?php
