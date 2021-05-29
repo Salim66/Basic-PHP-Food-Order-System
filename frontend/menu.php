@@ -29,13 +29,13 @@ require_once('app/db.php');
             <div class="menu text-right">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="<?php echo SITEURL; ?>">Home</a>
                     </li>
                     <li>
-                        <a href="categories.html">Categories</a>
+                        <a href="<?php echo SITEURL; ?>categories.php">Categories</a>
                     </li>
                     <li>
-                        <a href="foods.html">Foods</a>
+                        <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
